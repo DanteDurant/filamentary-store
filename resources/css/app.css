@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+.bg-primary {
+    background-color: var(--bg-primary) !important;
+  }
+  .bg-secondary {
+    background-color: var(--bg-secondary) !important;
+  }
+
+:root {
+    --bg-primary: #FEF7F3;
+    --bg-secondary: #efe8e4;
+    --text-color: #333333;
+  }
+
+  /* Dark theme overrides */
+  [data-theme="dark"] {
+    --bg-primary: #ae1616;
+    --bg-secondary: #0d0d0d;
+    --text-color: #e0e0e0;
+  }
+
+  /* Apply vars */
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+  }
