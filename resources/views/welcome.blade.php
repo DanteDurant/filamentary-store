@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Filamentory Store</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,9 +15,9 @@
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @endif
     </head>
-    <body class="font-sans antialiased bg-primary">
-        <div class="bg-primary"> ">
-            <!-- <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" alt="Laravel background" /> -->
+    <body class="font-sans antialiased bg-primary
+    text-theme">
+        <div class="bg-primary">
             <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] ">
                 <div class=" ">
                     <header class="items-center gap-2 py-10 lg:grid-cols-3">
@@ -25,18 +25,18 @@
 
                         </div>
                         @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
+                            <nav class="-mx-3 flex flex-1 justify-end" >
                                 @auth
                                     <a
                                         href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] "
+                                        class="rounded-md px-3 py-2  ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] "
                                     >
                                         Dashboard
                                     </a>
                                 @else
                                     <a
                                         href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] "
+                                        class="rounded-md px-3 py-2  ring-1 ring-transparent transitionfocus:outline-none focus-visible:ring-[#FF2D20] "
                                     >
                                         Log in
                                     </a>
@@ -44,7 +44,7 @@
                                     @if (Route::has('register'))
                                         <a
                                             href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] "
+                                            class="rounded-md px-3 py-2  ring-1 ring-transparent transition focus:outline-none focus-visible:ring-[#FF2D20] "
                                         >
                                             Register
                                         </a>
@@ -55,15 +55,21 @@
                     </header>
 
                     <main class="flex w-100 h-100 flex-col items-center justify-center ">
-                        <div class="container">
-
-                            <a href="/">
-                                <img class="max-w-full w-80" src="{{ asset('images/branding-full.svg') }}" height="1030px" width="1030px" alt="Filamentary Logo" />
-                            </a>
+                        <div class="logo-wrapper">
+                            <img
+                                src="{{ asset('images/branding-full-black.svg') }}"
+                                alt="Logo (light)"
+                                class="logo-light w-60 h-60"
+                            />
+                            <img
+                                src="{{ asset('images/branding-full-white.svg') }}"
+                                alt="Logo (dark)"
+                                class="logo-dark w-60 h-60"
+                            />
                         </div>
                         </main>
 
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
+                    <footer class="py-16 text-center text-sm >
                        footer
                     </footer>
                 </div>

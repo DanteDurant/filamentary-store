@@ -2,31 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme variables */
+:root {
+  --bg-primary:   #FEF7F3;
+  --bg-secondary: #efe8e4;
+  --text-color:   #333333;
+}
+[data-theme="dark"] {
+  --bg-primary:   #000000;
+  --bg-secondary: #0d0d0d;
+  --text-color:   #e0e0e0;
+}
 
-
+/* Base application of those vars */
+body {
+  background-color: var(--bg-primary);
+  color:            var(--text-color);
+}
 
 .bg-primary {
-    background-color: var(--bg-primary) !important;
-  }
-  .bg-secondary {
-    background-color: var(--bg-secondary) !important;
-  }
+  background-color: var(--bg-primary);
+}
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
 
-:root {
-    --bg-primary: #FEF7F3;
-    --bg-secondary: #efe8e4;
-    --text-color: #333333;
-  }
+/*Logo‑swap helpers  */
+.logo-light { display: inline-block; }
+.logo-dark  { display: none; }
+[data-theme="dark"] .logo-light { display: none; }
+[data-theme="dark"] .logo-dark  { display: inline-block; }
 
-  /* Dark theme overrides */
-  [data-theme="dark"] {
-    --bg-primary: #ae1616;
-    --bg-secondary: #0d0d0d;
-    --text-color: #e0e0e0;
-  }
-
-  /* Apply vars */
-  body {
-    background-color: var(--bg-primary);
-    color: var(--text-color);
-  }
+/* text helper */
+.text-theme {
+  color: var(--text-color) !important;
+}
